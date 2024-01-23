@@ -32,7 +32,6 @@ public:
 
 };
 
-extern bool Pi5Flag;
 extern serial Serial;
 extern bool isPinExported(int pin);
 

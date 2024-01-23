@@ -26,25 +26,6 @@ uint64_t millis()
     return tv.tv_sec*(uint64_t)1000+(tv.tv_usec / 1000);
 }
 
-bool Pi5Flag=false;
-
-bool isPinExported(int pin)
-{
-    int  gpiopin;
-    struct stat sb;
-    // est-ce un Pi5
-    Pi5Flag=(stat("/sys/class/gpio/gpiochip399", &sb) == 0);
-    if(Pi5Flag)
-        cout << "gpiochip399 existd!" << endl;
-    else
-        cout << "gpiochip399 doesn't existd!" << endl;
-    // est-ce deja exporte
-    gpiopin = Pi5Flag ? (399+pin) : pin;
-        cout << "verifie " << gpiopin << endl;
-    return (stat(("/sys/class/gpio/gpio" + to_string(gpiopin)).c_str(), &sb) == 0);
-}
-
-
 
 bool  init_gpiod()
 {

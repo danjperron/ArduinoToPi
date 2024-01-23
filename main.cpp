@@ -1613,25 +1613,25 @@ void loop() {
 
 int main(void)
 {
+/*
   setup();
   while(1)
     loop();
+*/
 
-
-/* tester les GPIOs
+ //tester les GPIOs
  cout << "set Pin26: " << pinMode(26,OUTPUT) << endl;
  digitalWrite(26,1);
  cout << "read 26 :out =1 => " << digitalRead(26) << endl;
  digitalWrite(26,0);
  cout << "read 26 :out =0 => " << digitalRead(26) << endl;
- cout << "set input 26 pull down:" << pinMode(26,INPUT_PULLDOWN) <<endl;
- cout << "read 26 in " << digitalRead(26) << endl;
+ cout << "set input 19 pull down:" << pinMode(19,INPUT_PULLDOWN) <<endl;
+ cout << "read 19 in " << digitalRead(19) << endl;
  cout << "set input 26:" << pinMode(26,INPUT) <<endl;
  cout << "read 26 in " << digitalRead(26) << endl;
- cout << "set input pullup 26:" << pinMode(26,INPUT_PULLUP) <<endl;
+ cout << "set input pullup 19:" << pinMode(19,INPUT_PULLUP) <<endl;
  usleep(100000);
- cout << "read 26 in " << digitalRead(26) << endl;
-*/
+ cout << "read 19 in " << digitalRead(19) << endl;
  release_gpiod();
   return 0;
 }
