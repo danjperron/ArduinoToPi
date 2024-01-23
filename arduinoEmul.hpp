@@ -41,9 +41,9 @@ extern bool isPinExported(int pin);
   pin   GPIO
   xxx	00	xxx
   xxx	01	xxx
-  03	02	relaisVentIntPv
-  05	03      SDA
-  07	04      SCL
+  03	02	SDA
+  05	03      SCL
+  07	04      W1   ds18b20
   29	05      relaiComp
   31	06      relaisVentIntGv
   26	07      ledca     SPI_CE1
@@ -51,7 +51,7 @@ extern bool isPinExported(int pin);
   21	09      ledCh     SPI_MISO
   19	10                SPI_MOSI
   23	11                SPI_CLK
-  32	12
+  32	12       relaiVentIntPv
   33	13       relaiVentUnitExt
   08	14       TX
   10	15       RX
