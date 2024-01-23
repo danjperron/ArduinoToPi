@@ -6,7 +6,7 @@ sudo apt-get install gpiod libgpiod-dev libgpiod-doc
 (présentement c'est seulement les GPIOs qui fonctionnent).
 Il reste à insérer le code pour le LCD et les capteurs de température.
 
-tout simplement  faire
-make
+tout simplement  faire<br>
+make<br>
 ./test
 
