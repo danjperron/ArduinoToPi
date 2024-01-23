@@ -1527,13 +1527,13 @@ void imprimeTout() {
     Serial.println(millis());
 
     Serial.print(F("Nettoyage filtre = "));
-    Serial.println(nettoyageFiltre);
+    Serial.println((int)  nettoyageFiltre);
 
     Serial.print(F("Consigne Interieur CANICULE °C = "));
     Serial.println(consigneIntCa);
 
     Serial.print(F("tempo Controle Temp = "));
-    Serial.println(chronoAutoTemp);
+    Serial.println((int) chronoAutoTemp);
 
     Serial.print(F("modifVitesse = "));
     Serial.println(modifVitesseInt);
@@ -1582,7 +1582,8 @@ void setup() {
   for (size_t indice = 0; indice < nombreDeConsignes; indice++)
     ;
 
-  Serial.begin(115200);
+//  Serial.begin(115200);
+  Serial.begin();
 
   int result = lcd.begin(nbColonnes, nbLignes);
   if (result) {
@@ -1613,11 +1614,11 @@ void loop() {
 
 int main(void)
 {
-/*
+
   setup();
   while(1)
     loop();
-*/
+
 
  //tester les GPIOs
  cout << "set Pin26: " << pinMode(26,OUTPUT) << endl;

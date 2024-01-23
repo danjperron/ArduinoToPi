@@ -2,6 +2,8 @@
 #include <cstdint>
 #include <sys/time.h>
 #include <cstddef>
+#include <fstream>
+#include <termios.h>
 
 #define F(A) A
 #define PIN_MAX 28
@@ -13,8 +15,8 @@ const int INPUT_PULLDOWN=3;
 
 const int LOW=0;
 const int HIGH=1;
-uint64_t micros();
-uint64_t millis();
+int micros();
+int millis();
 bool pinMode(int pin,int  mode);
 void digitalWrite(int pin,int  output);
 int digitalRead(int pin);
@@ -23,13 +25,21 @@ int digitalRead(int pin);
 class serial{
 public:
    serial();
-   void begin(int baudrate=115200);
+   ~serial();
+   void begin(int baudrate,char * DeviceName,bool Console=false);
+   void begin();  // console by default
    void print(const char *  thestring);
    void println(const char *  thestring);
+   void print(float thefloat);
+   void println(float thefloat);
    void print(int thenumber);
    void println(int thenumber);
    void println();
-
+   void print(char thechar);
+private:
+   int deviceHandle;
+   struct termios termiosStruct;
+   bool console;
 };
 
 extern serial Serial;
