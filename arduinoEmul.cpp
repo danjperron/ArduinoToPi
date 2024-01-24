@@ -87,6 +87,11 @@ bool  pinMode(int pin,int  mode)
    case INPUT_PULLDOWN:
                 flag=gpiod_line_request_input_flags(gpioline[pin],"ardEmul",GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_DOWN)==0;
                 break;
+
+   case OPENDRAIN_PULLUP:
+                flag=gpiod_line_request_output_flags(gpioline[pin],"ardEmul",
+                                       GPIOD_LINE_REQUEST_FLAG_OPEN_DRAIN|GPIOD_LINE_REQUEST_FLAG_BIAS_PULL_UP,1)==0;
+
   }
    return flag;
 

@@ -5,6 +5,7 @@
 #include "lcd.hpp"
 #include "string.h"
 #include <unistd.h> 
+#include "BB_DS18B20.hpp"
 
 using namespace std;
 
@@ -1614,12 +1615,14 @@ void loop() {
 
 int main(void)
 {
-
+/*
   setup();
   while(1)
     loop();
 
+*/
 
+/*
  //tester les GPIOs
  cout << "set Pin26: " << pinMode(26,OUTPUT) << endl;
  digitalWrite(26,1);
@@ -1633,7 +1636,17 @@ int main(void)
  cout << "set input pullup 19:" << pinMode(19,INPUT_PULLUP) <<endl;
  usleep(100000);
  cout << "read 19 in " << digitalRead(19) << endl;
- release_gpiod();
   return 0;
+*/
+
+// tester le ds18B20
+// PS dtoverlay gpio-w1 need not to be there
+// using bitbanging
+pinMode(4,OPENDRAIN_PULLUP);
+BB_DS18B20 ds18b20(gpioline[4]);
+
+cout << "scan for ds18B20sensor" << endl;
+ds18b20.ScanForSensor(true);
+
 }
 

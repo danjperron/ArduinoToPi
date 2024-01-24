@@ -204,7 +204,7 @@ uint8_t Toggle::pressCode(bool debug) {
       }
       if (onRelease()) {
         if (debug) {
-          Serial.print(F(" Pressed for:\t")); Serial.print(elapsedMs); Serial.println(" ms");
+          Serial.print(F(" Pressed for:\t")); Serial.print((int)elapsedMs); Serial.println(" ms");
         }
         _state = PB_ON_RELEASE;
       }

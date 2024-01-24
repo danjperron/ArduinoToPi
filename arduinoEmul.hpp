@@ -12,7 +12,7 @@ const int OUTPUT=0;
 const int INPUT=1;
 const int INPUT_PULLUP=2;
 const int INPUT_PULLDOWN=3;
-
+const int OPENDRAIN_PULLUP=4 ;
 const int LOW=0;
 const int HIGH=1;
 int micros();
@@ -42,6 +42,7 @@ private:
    bool console;
 };
 
+extern struct gpiod_line  *gpioline[PIN_MAX];
 extern serial Serial;
 extern bool isPinExported(int pin);
 
