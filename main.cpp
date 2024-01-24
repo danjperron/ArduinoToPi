@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "arduinoEmul.hpp"
 #include "toggle.hpp"
@@ -1640,12 +1641,12 @@ int main(void)
 */
 
 // tester le ds18B20
-// PS dtoverlay gpio-w1 need not to be there
-// using bitbanging
+// PS dtoverlay gpio-w1 doit être enlevé dans /boot/config.txt
+// utilisation du bitbanging
 pinMode(4,OPENDRAIN_PULLUP);
 BB_DS18B20 ds18b20(gpioline[4]);
 
-cout << "scan for ds18B20sensor" << endl;
+cout << "Recherche de capteurs DS18B20" << endl;
 ds18b20.ScanForSensor(true);
 
 }
